@@ -1,0 +1,19 @@
+version: "3.5"
+services:
+  flask: 
+    build: .
+    command: ["python", "hello.py"]
+    ports:
+      - target: 5000
+        published: 5000
+    networks:
+      - my-net
+    volumes:
+      - my-vol:/app
+
+
+networks:
+  my-net:
+
+volumes:
+  my-vol:
